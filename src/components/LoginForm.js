@@ -9,7 +9,7 @@ class LoginForm extends Component {
         <TitleText>
         Faça login para personalizar sua experiência.
       </TitleText>
-        <Input />
+        <Input label={'Email'} />
         <Button title='Entrar' />
       </View>
     );

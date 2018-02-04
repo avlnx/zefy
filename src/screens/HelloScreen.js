@@ -29,7 +29,7 @@ export default class HelloScreen extends Component {
             style={{ backgroundColor: 'white' }}
             title="Vamos começar"
             onPress={() => navigate('Login', { name: 'Login'})} />
-          <Caption style={{ textAlign: 'center'}}>
+          <Caption>
             Clique em "Vamos Começar" para criar sua conta ou fazer login.
           </Caption>
         </View>

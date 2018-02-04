@@ -5,10 +5,7 @@ import {
 
 const Caption = (props) => {
   return (
-    <Text style={Object.assign(props.style, {
-      fontSize: 14,
-      color: '#555',
-    })}>
+    <Text style={{fontSize: 14, color: '#555'}}>
       { props.children }
     </Text>
   );
