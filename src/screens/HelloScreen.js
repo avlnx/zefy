@@ -20,9 +20,9 @@ export default class HelloScreen extends Component {
           </Title>
         </View>
         <Button
-          style={{ backgroundColor: 'black' }}
+          style={{ backgroundColor: 'black', borderWidth: 0 }}
           onPress={() => navigate('Login', { name: 'Login'})}>
-          <Text style={{ color: 'white' }}>Vamos Começar</Text>
+          <Text style={{ color: 'white' }}>VAMOS COMEÇAR</Text>
         </Button>
         <Caption styleName="h-center">
           Clique em "Vamos Começar" para criar sua conta ou fazer login.
