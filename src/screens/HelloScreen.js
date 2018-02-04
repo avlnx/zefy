@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Heading, Title, Button, Text, Screen, View, Caption } from '@shoutem/ui';
+import { PaddedScreen } from '../components/common';
 
 export default class HelloScreen extends Component {
   static navigationOptions = {
@@ -9,7 +10,7 @@ export default class HelloScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <Screen style={{ padding: 10 }} styleName="full-screen">
+      <PaddedScreen style={{ padding: 10 }} styleName="full-screen">
         <View style={{ flex: 1, justifyContent: 'center'}}>
           <Heading styleName="h-center" style={{ fontSize: 56, lineHeight: 64}}>
             ZEFY
@@ -26,7 +27,7 @@ export default class HelloScreen extends Component {
         <Caption styleName="h-center">
           Clique em "Vamos Começar" para criar sua conta ou fazer login.
         </Caption>
-      </Screen>
+      </PaddedScreen>
     );
   }
 }

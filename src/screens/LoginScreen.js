@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Screen } from '@shoutem/ui';
 import LoginForm from '../components/LoginForm';
+import { PaddedScreen } from '../components/common';
 
 export default class LoginScreen extends Component {
   static navigationOptions = {
@@ -9,9 +9,9 @@ export default class LoginScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <Screen styleName="paper">
+      <PaddedScreen styleName="paper">
         <LoginForm />
-      </Screen>
+      </PaddedScreen>
     )
   }
 }
