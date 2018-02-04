@@ -15,7 +15,8 @@ const Container = (props) => {
 const styles = StyleSheet.create({
   wrapperView: {
     flex: 1,
-    padding: 10
+    padding: 10,
+    backgroundColor: '#00e640'
   },
 });
 

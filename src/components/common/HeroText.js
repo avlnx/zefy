@@ -14,12 +14,12 @@ const HeroText = (props) => {
 
 const styles = StyleSheet.create({
   textStyles: {
-    fontSize: 48,
+    fontSize: 62,
     fontWeight: '600',
     lineHeight: 60,
     textAlign: 'center',
     textAlignVertical: 'center',
-    color: '#555',
+    color: '#000',
     paddingTop: 20,
     paddingBottom: 20
   },

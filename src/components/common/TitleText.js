@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     lineHeight: 32,
     textAlign: 'center',
     textAlignVertical: 'center',
-    color: '#777',
+    color: '#333',
   },
 });
 

@@ -6,28 +6,32 @@ import {
   ScrollView,
   Text,
 } from 'react-native';
-import { Container, HeroText, TitleText } from '../components/common';
+import { Container, HeroText, TitleText, Caption } from '../components/common';
 
 export default class HelloScreen extends Component {
   static navigationOptions = {
-    title: 'Zefy',
+    header: null
   };
   render() {
     const { navigate } = this.props.navigation;
     return (
       <Container>
-        <View style={{flex: 4, justifyContent: 'center'}}>
+        <View style={{flex: 1, justifyContent: 'center'}}>
           <HeroText>
-            Zefy é uma solução de self-checkout totalmente Brasileira.
+            ZEFY
           </HeroText>
           <TitleText>
-            Clique em "Vamos Começar" para criar sua conta ou fazer login.
+             Uma solução completa de self-checkout orgulhosamente Brasileira.
           </TitleText>
         </View>
-        <View style={{flex: 1, justifyContent: 'center'}}>
+        <View>
           <Button
+            style={{ backgroundColor: 'white' }}
             title="Vamos começar"
             onPress={() => navigate('Login', { name: 'Login'})} />
+          <Caption style={{ textAlign: 'center'}}>
+            Clique em "Vamos Começar" para criar sua conta ou fazer login.
+          </Caption>
         </View>
       </Container>
     );
