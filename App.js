@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import { StackNavigator } from 'react-navigation';
+import firebase from 'firebase';
 
 import HelloScreen from './src/screens/HelloScreen';
 import LoginScreen from './src/screens/LoginScreen';
@@ -17,16 +18,18 @@ const RootStack = StackNavigator({
 });
 
 export default class App extends Component {
+  componentWillMount() {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyC8yEZ0ba9QpaDZe1GbVfhVnA6tRUMV5Eo',
+      authDomain: 'zefy-13373.firebaseapp.com',
+      databaseURL: 'https://zefy-13373.firebaseio.com',
+      projectId: 'zefy-13373',
+      storageBucket: 'zefy-13373.appspot.com',
+      messagingSenderId: '564276063339'
+    });
+  }
+
   render() {
     return <RootStack />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});

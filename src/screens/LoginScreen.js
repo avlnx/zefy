@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
+import LoginForm from '../components/LoginForm';
 
 export default class LoginScreen extends Component {
   static navigationOptions = {
@@ -13,9 +14,7 @@ export default class LoginScreen extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.wrapperView}>
-        <Text style={styles.greeting}>
-        Faça login para personalizar sua experiência.
-        </Text>
+        <LoginForm />
       </View>
     )
   }
