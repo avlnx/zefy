@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {
-  Button,
-  StyleSheet,
-  View,
-  ScrollView,
-  Text,
+  StyleSheet
 } from 'react-native';
+import { Heading, Title, Button, Text, Screen, View } from '@shoutem/ui';
 
 export default class HelloScreen extends Component {
   static navigationOptions = {
@@ -14,43 +11,23 @@ export default class HelloScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.wrapperView}>
-        <View style={{flex: 2, justifyContent: 'center'}}>
-          <Text style={styles.messageText}>
-            Zefy é uma solução de self-checkout totalmente Brasileira.
-          </Text>
-          <Text style={styles.instructions}>
-            Clique em "Vamos Começar" para criar sua conta ou fazer login.
-          </Text>
-        </View>
-        <View style={styles.buttonWrapper}>
-          <Button
-            title="Vamos começar"
-            onPress={() => navigate('Login', { name: 'Login'})} />
-        </View>
-      </View>
+      <Screen>
+        <Heading styleName="bold, h-center">
+          Zefy é uma solução de self-checkout totalmente Brasileira.
+        </Heading>
+        <Title>
+          Clique em "Vamos Começar" para criar sua conta ou fazer login.
+        </Title>
+        <Button styleName="dark" onPress={() => navigate('Login', { name: 'Login'})}>
+          <Text>Vamos Começar</Text>
+        </Button>
+      </Screen>
     );
   }
 }
 
 const styles = StyleSheet.create({
   wrapperView: {
-    flex: 1
-  },
-  messageText: {
-    color: '#333',
-    fontWeight: 'bold',
-    fontSize: 35,
-    textAlign: 'center',
-    padding: 20
-  },
-  instructions: {
-    color: '#777',
-    fontSize: 18,
-    textAlign: 'center',
-    padding: 20
-  },
-  buttonWrapper: {
     flex: 1
   }
 });

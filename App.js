@@ -9,10 +9,12 @@ import {
 import { StackNavigator } from 'react-navigation';
 import firebase from 'firebase';
 
+// import ExampleScreen from './src/screens/ExampleScreen';
 import HelloScreen from './src/screens/HelloScreen';
 import LoginScreen from './src/screens/LoginScreen';
 
 const RootStack = StackNavigator({
+  // Example: { screen: ExampleScreen },
   Hello: { screen: HelloScreen },
   Login: { screen: LoginScreen },
 });
