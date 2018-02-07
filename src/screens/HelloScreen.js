@@ -10,7 +10,7 @@ export default class HelloScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <PaddedScreen style={{ padding: 10 }} styleName="full-screen">
+      <PaddedScreen styleName="full-screen">
         <View style={{ flex: 1, justifyContent: 'center'}}>
           <Heading styleName="h-center" style={{ fontSize: 56, lineHeight: 64}}>
             ZEFY

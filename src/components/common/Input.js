@@ -2,7 +2,11 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { View, Caption, TextInput, Container } from '@shoutem/ui';
 
-const Input = ({ label, value, onChangeText, placeholder, secureTextEntry = false }) => {
+const Input = (
+  {
+    label, value, onChangeText, placeholder, style = {},
+    secureTextEntry = false, autoCorrect = true
+  }) => {
   return (
     <View>
       <Caption>{ label }</Caption>
@@ -10,8 +14,9 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry = fals
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        style={{  }}
+        autoCorrect={autoCorrect}
         secureTextEntry={secureTextEntry}
+        style={style}
       />
     </View>
   );

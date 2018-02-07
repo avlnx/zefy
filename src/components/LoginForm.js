@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
+import firebase from 'firebase';
 import { View, Button, Text, TextInput, Screen, Title, Divider } from '@shoutem/ui';
 import { Input } from './common';
 
 class LoginForm extends Component {
-  state = { text: '' };
+  state = { email: '', password: '' };
+
+  onButtonPress() {
+    const { email, password } = this.state;
+    firebase.auth().signInWithEmailAndPassword(email, password);
+  }
 
   render() {
     return (
@@ -14,14 +20,22 @@ class LoginForm extends Component {
         </Title>
         <Input
           label={'Email'}
-          value={this.state.text}
+          value={this.state.email}
           placeholder={'examplo@mail.com'}
-          onChangeText={ text => this.setState({ text })}
+          autoCorrect={false}
+          onChangeText={ email => this.setState({ email })}
           />
         <Divider />
-        <Input label={'Senha'} placeholder={'suasenhasegura'} secureTextEntry />
+        <Input
+          label={'Senha'}
+          placeholder={'suasenhasegura'}
+          secureTextEntry
+          value={this.state.password}
+          onChangeText={ password => this.setState({ password })}
+          style={{ backgroundColor: 'gray' }}
+          />
         <Divider />
-        <Button styleName='dark'><Text>Entrar</Text></Button>
+        <Button onPress={this.onButtonPress.bind(this)} styleName='dark'><Text>Entrar</Text></Button>
       </View>
     );
   }
