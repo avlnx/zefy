@@ -1,5 +1,3 @@
 export * from './Container';
-export * from './HeroText';
-export * from './TitleText';
+export * from './TextTag';
 export * from './Caption';
-export * from './Input';
