@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  View,
-  StyleSheet
+    View,
+    StyleSheet
 } from 'react-native';
 
 const Container = (props) => {
-  return (
-    <View style={[styles.wrapperView, props.style, {backgroundColor: props.light ? '#eee' : '#00e640'}]}>
-      { props.children }
-    </View>
-  );
-}
+    return (
+        <View style={[styles.wrapperView, props.style, {backgroundColor: props.light ? '#eee' : '#00e640'}]}>
+            {props.children}
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
-  wrapperView: {
-    flex: 1,
-    padding: 15,
-    // backgroundColor: props.light ? '#eee' : '#00e640'
-    // backgroundColor: '#eee'
-  },
+    wrapperView: {
+        flex: 1,
+        padding: 15,
+    },
 });
 
-export { Container };
+export {Container};

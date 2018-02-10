@@ -1,0 +1,39 @@
+# Required by RNFirebase
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+#pod 'Firebase/Database'
+#pod 'Firebase/Storage'
+
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'zefy' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for zefy
+
+  target 'zefy-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'zefyTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'zefy-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for zefy-tvOS
+
+  #target 'zefy-tvOSTests' do
+  #  inherit! :search_paths
+  #  # Pods for testing
+  #end
+
+end

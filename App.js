@@ -1,29 +1,67 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { StackNavigator } from 'react-navigation';
-// import firebase from 'firebase';
+import {StackNavigator} from 'react-navigation';
+import firebase from 'react-native-firebase';
 
 import HelloScreen from './src/screens/HelloScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import OnboardingScreen from './src/screens/OnboardingScreen';
+
+const NavigationOptions = {
+    headerStyle: {
+        backgroundColor: '#00e640',
+    },
+    headerTintColor: 'black',
+    headerTitleStyle: {
+        fontWeight: 'bold'
+    }
+};
 
 const RootStack = StackNavigator({
-  Hello: { screen: HelloScreen },
-  Login: { screen: LoginScreen },
-});
+        Hello: {screen: HelloScreen},
+        Login: {screen: LoginScreen},
+    },
+    {
+        navigationOptions: NavigationOptions
+    });
+
+const LoggedInStack = StackNavigator({
+        OnboardingScreen: {screen: OnboardingScreen},
+    },
+    {
+        navigationOptions: NavigationOptions
+    });
 
 export default class App extends Component {
-  componentWillMount() {
-    // firebase.initializeApp({
-    //   apiKey: 'AIzaSyC8yEZ0ba9QpaDZe1GbVfhVnA6tRUMV5Eo',
-    //   authDomain: 'zefy-13373.firebaseapp.com',
-    //   databaseURL: 'https://zefy-13373.firebaseio.com',
-    //   projectId: 'zefy-13373',
-    //   storageBucket: 'zefy-13373.appspot.com',
-    //   messagingSenderId: '564276063339'
-    // });
-  }
+    constructor() {
+        super();
+        this.state = {
+            loading: true,
+            user: null
+        };
+    }
 
-  render() {
-    return <RootStack />;
-  }
+    componentWillMount() {
+        this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
+            this.setState({
+                loading: false,
+                user,
+            });
+        });
+    }
+
+    componentWillUnmount() {
+        this.authSubscription();
+    }
+
+    render() {
+        // The application is initialising
+        if (this.state.loading) return null;
+
+        // The user is an Object, so they're logged in
+        if (this.state.user) return <LoggedInStack />;
+
+        // The user is null, so they're logged out
+        return <RootStack/>;
+    }
 }

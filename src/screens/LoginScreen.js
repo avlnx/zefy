@@ -7,11 +7,11 @@ export default class LoginScreen extends Component {
     title: 'Login',
   };
   render() {
-    const { navigate } = this.props.navigation;
+    // const { navigate } = this.props.navigation;
     return (
-      <Container light>
+      <Container>
         <LoginForm />
       </Container>
-    )
+    );
   }
 }
