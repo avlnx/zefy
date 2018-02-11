@@ -6,6 +6,7 @@ import firebase from 'react-native-firebase';
 import HelloScreen from './src/screens/HelloScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
+import { Spinner } from './src/components/common';
 
 const NavigationOptions = {
     headerStyle: {
@@ -17,7 +18,7 @@ const NavigationOptions = {
     }
 };
 
-const RootStack = StackNavigator({
+const LoggedOutStack = StackNavigator({
         Hello: {screen: HelloScreen},
         Login: {screen: LoginScreen},
     },
@@ -56,12 +57,12 @@ export default class App extends Component {
 
     render() {
         // The application is initialising
-        if (this.state.loading) return null;
+        if (this.state.loading) return <Spinner />;
 
         // The user is an Object, so they're logged in
         if (this.state.user) return <LoggedInStack />;
 
         // The user is null, so they're logged out
-        return <RootStack/>;
+        return <LoggedOutStack />;
     }
 }

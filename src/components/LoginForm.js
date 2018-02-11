@@ -28,6 +28,8 @@ class LoginForm extends Component {
                this.setState({ loading: false});
             })
             .then((user) => {
+                console.log(user);
+                console.log(user.uid);
                 // this.setState({ loading: false})
                 // if (user) alert('Welcome! You are logged in now');
             })

@@ -1,7 +1,8 @@
 # Required by RNFirebase
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-#pod 'Firebase/Database'
+pod 'Firebase/Database'
+pod 'Firebase/Firestore'
 #pod 'Firebase/Storage'
 
 # Uncomment the next line to define a global platform for your project
