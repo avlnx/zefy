@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-} from 'react-native';
+import { View } from 'react-native';
 import { Container, Caption, TextTag } from '../components/common';
 import { Button, Text } from 'react-native-elements';
 
